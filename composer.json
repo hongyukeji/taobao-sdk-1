@@ -1,0 +1,18 @@
+{
+  "require": {
+
+  },
+  "repositories": [
+
+    {
+      "type": "composer",
+      "secure-http":false,
+      "url": "https://packagist.phpcomposer.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "TaobaoSDK\\": "src"
+    }
+  }
+}
