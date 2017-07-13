@@ -1,15 +1,17 @@
 {
-  "require": {
-
-  },
-  "repositories": [
-
+  "name": "yingouqlj/taobao-sdk",
+  "description": "淘宝sdk加composer支持,搬运持续更新",
+  "license": "none",
+  "authors": [
     {
-      "type": "composer",
-      "secure-http":false,
-      "url": "https://packagist.phpcomposer.com"
+      "name": "作者是淘宝我只是搬运",
+      "email": "yingouqlj@gmail.com"
     }
   ],
+  "require": {
+    "php":">=5.5.0"
+  },
+  "minimum-stability" : "dev",
   "autoload": {
     "psr-4": {
       "TaobaoSDK\\": "src"
