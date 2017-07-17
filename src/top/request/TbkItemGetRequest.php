@@ -1,5 +1,7 @@
 <?php
 namespace TaobaoSDK\top\request;
+use TaobaoSDK\top\RequestCheckUtil;
+
 /**
  * TOP API: taobao.tbk.item.get request
  * 

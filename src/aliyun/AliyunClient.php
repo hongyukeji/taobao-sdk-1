@@ -1,5 +1,7 @@
 <?php
 namespace TaobaoSDK\aliyun;
+use TaobaoSDK\top\request\AppipGetRequest;
+
 class AliyunClient
 {
 	public $accessKeyId;
@@ -25,12 +27,17 @@ class AliyunClient
 	
 	protected $sdkVersion = "1.0";
 
-	public function execute($request)
+    /**
+     * @param $request AppipGetRequest
+     * @return mixed|\SimpleXMLElement|\stdClass
+     */
+    public function execute($request)
 	{
 		if($this->checkRequest) {
 			try {
 				$request->check();
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
+			    $result=new \stdClass();
 				$result->code = $e->getCode();
 				$result->message = $e->getMessage();
 				return $result;
@@ -102,6 +109,7 @@ class AliyunClient
 		if (false === $respWellFormed)
 		{
 			$this->logCommunicationError($apiParams["Action"],$requestUrl,"HTTP_RESPONSE_NOT_WELL_FORMED",$resp);
+            $result=new \stdClass();
 			$result->code = 0;
 			$result->message = "HTTP_RESPONSE_NOT_WELL_FORMED";
 			return $result;
